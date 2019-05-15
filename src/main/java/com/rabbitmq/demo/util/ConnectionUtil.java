@@ -17,7 +17,7 @@ public class ConnectionUtil {
         //设置端口
         connectionFactory.setPort(5672);
         //设置账号信息、用户名、密码、vhost
-        connectionFactory.setVirtualHost("/");
+        connectionFactory.setVirtualHost("/leyou");
         connectionFactory.setUsername("leyou");
         connectionFactory.setPassword("123456");
         //通过工厂类获取连接
