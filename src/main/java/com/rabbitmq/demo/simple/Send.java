@@ -10,6 +10,7 @@ import com.rabbitmq.demo.util.ConnectionUtil;
  */
 public class Send {
     private final static String QUEUE_NAME="simple_queue";
+
     public static void main(String[] args)throws Exception{
         //获取连接
         Connection connection = ConnectionUtil.getConnection();
