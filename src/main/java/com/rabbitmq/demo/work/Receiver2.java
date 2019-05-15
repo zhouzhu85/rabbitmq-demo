@@ -22,11 +22,6 @@ public class Receiver2 {
             public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
                 String msg = new String(body);
                 System.out.println("【消费者2】received: "+msg+"!");
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
                 channel.basicAck(envelope.getDeliveryTag(),false);
             }
         };
