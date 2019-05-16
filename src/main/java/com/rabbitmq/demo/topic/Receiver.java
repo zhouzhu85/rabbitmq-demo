@@ -16,9 +16,10 @@ public class Receiver {
     public static void main(String[] args) throws Exception{
         Connection connection = ConnectionUtil.getConnection();
         Channel channel = connection.createChannel();
-        channel.queueDeclare(QUEUE_NAME,false,false,false,null);
+        //第二参数是开启交换机持久化
+        channel.queueDeclare(QUEUE_NAME,true,false,false,null);
 
-        channel.queueBind(QUEUE_NAME,EXCHANGE_NAME,"item.update");
+        channel.queueBind(QUEUE_NAME,EXCHANGE_NAME,"item.insert");
         channel.queueBind(QUEUE_NAME,EXCHANGE_NAME,"item.delete");
         DefaultConsumer consumer = new DefaultConsumer(channel){
             @Override
